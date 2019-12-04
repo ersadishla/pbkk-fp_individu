@@ -24,5 +24,17 @@ class Goods extends AutoDate
             'Brand',
             'id'
         );
+
+        $this->hasMany(
+            'id',
+            'GoodsInflows',
+            'goods_id'
+        );
+
+        $this->hasMany(
+            'id',
+            'GoodsOutflows',
+            'goods_id'
+        );
     }
 }

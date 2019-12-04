@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 03 Des 2019 pada 15.42
+-- Waktu pembuatan: 04 Des 2019 pada 15.43
 -- Versi server: 10.1.38-MariaDB
 -- Versi PHP: 7.3.4
 
@@ -19,24 +19,22 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `deasybeautydb`
+-- Database: `db`
 --
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `goods`
+-- Struktur dari tabel `goods_outflows`
 --
 
-CREATE TABLE `goods` (
+CREATE TABLE `goods_outflows` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `brand_id` bigint(20) NULL,
-  `name` varchar(191) COLLATE utf8mb4_unicode_ci NULL,
-  `type` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `volume` int(11) NULL,
-  `stock` int(11) NULL,
-  `min_stock` int(11) NULL,
-  `last_purchase_price` double(12,2) NULL,
+  `user_id` bigint(20) NOT NULL,
+  `goods_id` varchar(191) NOT NULL,
+  `quantity` int(11) NOT NULL,
+  `cur_stock` int(11) NULL,
+  `detail` varchar(191) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -46,9 +44,9 @@ CREATE TABLE `goods` (
 --
 
 --
--- Indeks untuk tabel `goods`
+-- Indeks untuk tabel `goods_outflows`
 --
-ALTER TABLE `goods`
+ALTER TABLE `goods_outflows`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -56,9 +54,9 @@ ALTER TABLE `goods`
 --
 
 --
--- AUTO_INCREMENT untuk tabel `goods`
+-- AUTO_INCREMENT untuk tabel `goods_outflows`
 --
-ALTER TABLE `goods`
+ALTER TABLE `goods_outflows`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 COMMIT;
 

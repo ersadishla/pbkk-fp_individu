@@ -91,15 +91,15 @@ $di['router'] = function() use ($defaultModule, $modules, $di, $config) {
 	$router->addPost('/inflow/store', [
 	    'namespace' => 'StockMan\Goods\Controllers\Web',
 		'module' => 'goods',
-	    'controller' => 'goods',
-	    'action' => 'inflowStore'
+	    'controller' => 'goodsinflow',
+	    'action' => 'store'
 	]);
 
 	$router->addPost('/outflow/store', [
 	    'namespace' => 'StockMan\Goods\Controllers\Web',
 		'module' => 'goods',
-	    'controller' => 'goods',
-	    'action' => 'outflowStore'
+	    'controller' => 'goodsoutflow',
+	    'action' => 'store'
 	]);
 
 

@@ -12,6 +12,7 @@ class AutoDate extends Model
     public function beforeCreate()
     {
         $this->created_at = date('Y-m-d h:i:s');
+        $this->updated_at = date('Y-m-d h:i:s');
     }
 
     public function beforeUpdate()
