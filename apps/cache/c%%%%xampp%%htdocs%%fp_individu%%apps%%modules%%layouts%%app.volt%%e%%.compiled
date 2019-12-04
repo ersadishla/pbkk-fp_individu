@@ -1,0 +1,151 @@
+a:7:{i:0;s:1022:"<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Stock-Man</title>
+
+    <link href="<?= $this->url->get('sb-admin2/vendor/fontawesome-free/css/all.min.css') ?>" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+    <link href="<?= $this->url->get('sb-admin2/css/sb-admin-2.min.css') ?>" rel="stylesheet">
+    <link href="<?= $this->url->get('sb-admin2/vendor/datatables/dataTables.bootstrap4.min.css') ?>" rel="stylesheet">
+    <link href="<?= $this->url->get('icon/material-icons.css') ?>" rel="stylesheet">
+    <link href="<?= $this->url->get('css/select2.min.css') ?>" rel="stylesheet">
+    <link href="<?= $this->url->get('css/select2-bootstrap.min.css') ?>" rel="stylesheet">
+    <link href="<?= $this->url->get('css/sweetalert2.min.css') ?>" rel="stylesheet">
+
+    ";s:3:"css";a:1:{i:0;a:4:{s:4:"type";i:357;s:5:"value";s:6:"
+    ";s:4:"file";s:77:"C:\xampp\htdocs\fp_individu\apps\modules\goods\config/../\../layouts/app.volt";s:4:"line";i:20;}}i:1;s:3360:"
+</head>
+<body id="page-top">
+    <div id="wrapper">
+        <!-- Sidebar -->
+                    <ul class="navbar-nav primer sidebar accordion" id="accordionSidebar">
+    
+            <!-- Sidebar - Brand -->
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="#">
+                <div class="sidebar-brand-icon rotate-n-15">
+                <i class="fas fa-magic"></i>
+                </div>
+                <div class="sidebar-brand-text mx-3">Stock-Man</div>
+            </a>
+    
+            <!-- Sidebar Toggler (Sidebar) -->
+            <div class="text-center d-none d-md-inline">
+                <button class="rounded-circle border-0" id="sidebarToggle"></button>
+            </div>
+
+            <!-- Heading -->
+            <div class="sidebar-heading">
+                Pengaturan Produk
+            </div>
+
+            <!-- Nav Item - Dashboard -->
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                <i class="fas fa-chart-line"></i>
+                <span>Dashboard</span></a>
+            </li>
+            
+            <!-- Nav Item - Utilities Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link" href="<?= $this->url->get('brand') ?>">
+                <i class="fas fa-clipboard-list"></i>
+                <span>Manajemen Merk</span></a>
+            </li>
+            
+            <li class="nav-item">
+                <a class="nav-link" href="<?= $this->url->get('goods') ?>">
+                <i class="fas fa-cubes"></i>
+                <span>Stok Saya</span></a>
+            </li>
+        </ul>
+        <!-- End of Sidebar -->
+
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column" style="background-color: #fff5f6;">
+            <!-- Main Content -->
+            <div id="content">
+                <!-- Topbar -->
+                    <nav class="navbar navbar-expand topbar mb-4 static-top shadow">
+
+    <!-- Sidebar Toggle (Topbar) -->
+    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+        <i class="fa fa-bars"></i>
+    </button>
+
+    <!-- Topbar Navbar -->
+    <ul class="navbar-nav ml-auto">
+        
+        <!-- Dropdown - Messages -->
+        <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in" aria-labelledby="searchDropdown">
+            <form class="form-inline mr-auto w-100 navbar-search">
+            <div class="input-group">
+                <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+                <div class="input-group-append">
+                <button class="btn btn-primary" type="button">
+                    <i class="fas fa-search fa-sm"></i>
+                </button>
+                </div>
+            </div>
+            </form>
+        </div>
+        </li>
+
+        <div class="topbar-divider d-none d-sm-block"></div>
+
+        <!-- Nav Item - User Information -->
+        <li class="nav-item dropdown no-arrow">
+        </li>
+
+    </ul>
+
+</nav>
+                <!-- End of Topbar -->
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
+                    ";s:7:"content";a:1:{i:0;a:4:{s:4:"type";i:357;s:5:"value";s:22:"
+                    ";s:4:"file";s:77:"C:\xampp\htdocs\fp_individu\apps\modules\goods\config/../\../layouts/app.volt";s:4:"line";i:38;}}i:2;s:1526:"
+                </div>
+                <!-- /.container-fluid -->
+            </div>
+            <!-- End of Main Content -->
+            <!-- Footer -->
+                <footer class="sticky-footer bg-white">
+    <div class="container my-auto">
+        <div class="copyright text-center my-auto">
+            <span>Copyright &copy; Stock-Man 2019</span>
+        </div>
+    </div>
+</footer>
+            <!-- End of Footer -->
+        </div>
+        <!-- End of Content Wrapper -->
+
+    </div>
+
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="<?= $this->url->get('sb-admin2/vendor/jquery/jquery.min.js') ?>"></script>
+    <script src="<?= $this->url->get('sb-admin2/vendor/bootstrap/js/bootstrap.bundle.min.js') ?>"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="<?= $this->url->get('sb-admin2/vendor/jquery-easing/jquery.easing.min.js') ?>"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="<?= $this->url->get('sb-admin2/js/sb-admin-2.min.js') ?>"></script>
+
+    <!-- Page level plugins -->
+    <script src="<?= $this->url->get('sb-admin2/vendor/datatables/jquery.dataTables.min.js') ?>"></script>
+    <script src="<?= $this->url->get('sb-admin2/vendor/datatables/dataTables.bootstrap4.min.js') ?>"></script>
+    <script src="<?= $this->url->get('js/select2.min.js') ?>"></script>
+    <script src="<?= $this->url->get('js/sweetalert2.min.js') ?>"></script>
+    <script src="<?= $this->url->get('js/jquery.number.min.js') ?>"></script>
+    
+    ";s:2:"js";a:1:{i:0;a:4:{s:4:"type";i:357;s:5:"value";s:6:"
+    ";s:4:"file";s:77:"C:\xampp\htdocs\fp_individu\apps\modules\goods\config/../\../layouts/app.volt";s:4:"line";i:70;}}i:3;s:20:"
+</body>
+</html>
+";}

@@ -14,13 +14,105 @@ $di['router'] = function() use ($defaultModule, $modules, $di, $config) {
 	    'controller' => isset($modules[$defaultModule]['defaultController']) ? $modules[$defaultModule]['defaultController'] : 'index',
 	    'action' => isset($modules[$defaultModule]['defaultAction']) ? $modules[$defaultModule]['defaultAction'] : 'index'
 	]);
+
+	$router->addGet('/brand', [
+	    'namespace' => 'StockMan\Goods\Controllers\Web',
+		'module' => 'goods',
+	    'controller' => 'brand',
+	    'action' => 'index'
+	]);
+
+	$router->addPost('/brand', [
+	    'namespace' => 'StockMan\Goods\Controllers\Web',
+		'module' => 'goods',
+	    'controller' => 'brand',
+	    'action' => 'store'
+	]);
+
+	$router->addGet('/brand/{brand}/edit', [
+	    'namespace' => 'StockMan\Goods\Controllers\Web',
+		'module' => 'goods',
+	    'controller' => 'brand',
+	    'action' => 'edit'
+	]);
+
+	$router->addPost('/brand/{brand}/update', [
+	    'namespace' => 'StockMan\Goods\Controllers\Web',
+		'module' => 'goods',
+	    'controller' => 'brand',
+	    'action' => 'update'
+	]);
+
+	$router->addPost('/brand/{brand}/destroy', [
+	    'namespace' => 'StockMan\Goods\Controllers\Web',
+		'module' => 'goods',
+	    'controller' => 'brand',
+	    'action' => 'destroy'
+	]);
+
+
+
+
+	$router->addGet('/goods', [
+	    'namespace' => 'StockMan\Goods\Controllers\Web',
+		'module' => 'goods',
+	    'controller' => 'goods',
+	    'action' => 'index'
+	]);
+
+	$router->addPost('/goods', [
+	    'namespace' => 'StockMan\Goods\Controllers\Web',
+		'module' => 'goods',
+	    'controller' => 'goods',
+	    'action' => 'store'
+	]);
+
+	$router->addGet('/goods/{goods}/edit', [
+	    'namespace' => 'StockMan\Goods\Controllers\Web',
+		'module' => 'goods',
+	    'controller' => 'goods',
+	    'action' => 'edit'
+	]);
+
+	$router->addPost('/goods/{goods}/update', [
+	    'namespace' => 'StockMan\Goods\Controllers\Web',
+		'module' => 'goods',
+	    'controller' => 'goods',
+	    'action' => 'update'
+	]);
+
+	$router->addPost('/goods/{goods}/destroy', [
+	    'namespace' => 'StockMan\Goods\Controllers\Web',
+		'module' => 'goods',
+	    'controller' => 'goods',
+	    'action' => 'destroy'
+	]);
+
+	$router->addPost('/inflow/store', [
+	    'namespace' => 'StockMan\Goods\Controllers\Web',
+		'module' => 'goods',
+	    'controller' => 'goods',
+	    'action' => 'inflowStore'
+	]);
+
+	$router->addPost('/outflow/store', [
+	    'namespace' => 'StockMan\Goods\Controllers\Web',
+		'module' => 'goods',
+	    'controller' => 'goods',
+	    'action' => 'outflowStore'
+	]);
+
+
 	
 	/**
 	 * Not Found Routing
 	 */
 	$router->notFound(
 		[
-			'namespace' => 'Phalcon\Init\Common\Controllers',
+			// 'namespace' => 'Phalcon\Init\Common\Controllers',
+			// 'controller' => 'base',
+			// 'action'     => 'route404',
+			'namespace' => 'StockMan\Common\Controllers',
 			'controller' => 'base',
 			'action'     => 'route404',
 		]

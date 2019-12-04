@@ -56,6 +56,7 @@ $di['voltService'] = function($view, $di) use ($config) {
 $di['view'] = function () {
     $view = new View();
     $view->setViewsDir(APP_PATH . '/common/views/');
+    $view->setLayoutsDir(APP_PATH . '/modules/layouts/');
 
     $view->registerEngines(
         [

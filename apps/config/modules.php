@@ -12,15 +12,14 @@ return array(
         'defaultAction' => 'index'
     ],
 
-    'backoffice' => [
-        'namespace' => 'Phalcon\Init\BackOffice',
-        'webControllerNamespace' => 'Phalcon\Init\BackOffice\Controllers\Web',
-        'apiControllerNamespace' => 'Phalcon\Init\BackOffice\Controllers\Api',
-        'className' => 'Phalcon\Init\BackOffice\Module',
-        'path' => APP_PATH . '/modules/backoffice/Module.php',
-        'defaultRouting' => true,
-        'defaultController' => 'index',
+    'goods' => [
+        'namespace' => 'StockMan\Goods',
+        'webControllerNamespace' => 'StockMan\Goods\Controllers\Web',
+        'apiControllerNamespace' => 'StockMan\Goods\Controllers\Api',
+        'className' => 'StockMan\Goods\Module',
+        'path' => APP_PATH . '/modules/goods/Module.php',
+        'defaultRouting' => false,
+        'defaultController' => 'goods',
         'defaultAction' => 'index'
     ],
-
 );
