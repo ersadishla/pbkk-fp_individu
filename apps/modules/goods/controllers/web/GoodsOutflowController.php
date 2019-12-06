@@ -6,11 +6,47 @@ use Phalcon\Mvc\Controller;
 use StockMan\Goods\Models\Goods;
 use StockMan\Goods\Models\GoodsOutflow;
 use \DataTables\DataTable;
+use \Carbon\Carbon as Carbon;
 use Phalcon\Validation;
 use Phalcon\Validation\Validator\PresenceOf;
 
 class GoodsOutflowController extends Controller
 {
+    public function indexAction()
+    {
+        if ($this->request->isAjax()) {
+            if(!empty($this->request->getPost('from_date')) && !empty($this->request->getPost('to_date'))){
+                $date_from = Carbon::parse($this->request->getPost('from_date'))->startOfDay();
+                $date_to = Carbon::parse($this->request->getPost('to_date'))->endOfDay();
+
+                $query = 'SELECT go.id, go.user_id, g.name, go.quantity, go.cur_stock, go.detail, go.updated_at
+                            FROM \StockMan\Goods\Models\GoodsOutflow as go 
+                            JOIN \StockMan\Goods\Models\Goods as g 
+                            WHERE go.goods_id = g.id
+                            AND go.created_at >= "'."$date_from".'" 
+                            AND go.created_at <= "'."$date_to".'"'.'';
+                $resultset = $this->modelsManager
+                            ->createQuery($query)
+                            ->execute();
+            }else {
+                $query = "
+                SELECT go.id, go.user_id, g.name, go.quantity, go.cur_stock, go.detail, go.updated_at
+                FROM \StockMan\Goods\Models\GoodsOutflow as go
+                JOIN \StockMan\Goods\Models\Goods as g 
+                WHERE go.goods_id = g.id";
+                $resultset  = $this->modelsManager
+                            ->createQuery($query)
+                            ->execute();
+            }
+
+            $dataTables = new DataTable();
+
+            $dataTables->fromResultSet($resultset)->sendResponse();
+        }
+
+        $this->view->pick('views/outflow/index');
+    }
+
     public function storeAction()
     {
     

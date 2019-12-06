@@ -17,15 +17,21 @@
             <div class="sidebar-heading">
                 Pengaturan Produk
             </div>
-
-            <!-- Nav Item - Dashboard -->
-            <li class="nav-item">
-                <a class="nav-link" href="#">
-                <i class="fas fa-chart-line"></i>
-                <span>Dashboard</span></a>
-            </li>
             
             <!-- Nav Item - Utilities Collapse Menu -->
+            
+            <li class="nav-item">
+                <a class="nav-link" href="{{url('goods')}}">
+                <i class="fas fa-cubes"></i>
+                <span>Stok Saya</span></a>
+            </li>
+            
+            <li class="nav-item">
+                <a class="nav-link" href="{{url('recommend')}}">
+                <i class="fas fa-search-dollar"></i>
+                <span>Perhitungan Harga</span></a>
+            </li>
+            
             <li class="nav-item">
                 <a class="nav-link" href="{{url('brand')}}">
                 <i class="fas fa-clipboard-list"></i>
@@ -33,8 +39,26 @@
             </li>
             
             <li class="nav-item">
-                <a class="nav-link" href="{{url('goods')}}">
-                <i class="fas fa-cubes"></i>
-                <span>Stok Saya</span></a>
+                <a class="nav-link" href="{{url('inflow')}}">
+                <i class="fas fa-history"></i>
+                <span>Histori Pemasukan Stok</span></a>
+            </li>
+            
+            <li class="nav-item">
+                <a class="nav-link" href="{{url('outflow')}}">
+                <i class="fas fa-history"></i>
+                <span>Histori Pengeluaran Stok</span></a>
+            </li>
+            
+            <li class="nav-item">
+                <a class="nav-link" href="{{url('filter/minimal')}}">
+                <i class="fas fa-cart-plus"></i>
+                <span>Stok Menipis</span></a>
+            </li>
+            
+            <li class="nav-item">
+                <a class="nav-link" href="{{url('filter/empty')}}">
+                <i class="fas fa-cart-plus"></i>
+                <span>Stok Habis</span></a>
             </li>
         </ul>

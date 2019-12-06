@@ -20,8 +20,11 @@ class GoodsInflow extends AutoDate
 
         $this->belongsTo(
             'goods_id',
-            'Goods',
-            'id'
+            'StockMan\Goods\Models\Goods',
+            'id',
+            [
+                'alias' => 'Goods',
+            ]
         );
     }
 }

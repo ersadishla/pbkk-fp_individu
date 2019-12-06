@@ -30,10 +30,10 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `goods_outflows` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `user_id` bigint(20) NOT NULL,
-  `goods_id` varchar(191) NOT NULL,
-  `quantity` int(11) NOT NULL,
-  `cur_stock` int(11) NULL,
+  `user_id` bigint(20) DEFAULT NULL,
+  `goods_id` bigint(20) DEFAULT NULL,
+  `quantity` int(11) DEFAULT NULL,
+  `cur_stock` int(11) DEFAULT NULL,
   `detail` varchar(191) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL

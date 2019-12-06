@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 03 Des 2019 pada 15.42
+-- Waktu pembuatan: 05 Des 2019 pada 21.48
 -- Versi server: 10.1.38-MariaDB
 -- Versi PHP: 7.3.4
 
@@ -19,26 +19,29 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `deasybeautydb`
+-- Database: `db`
 --
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `goods`
+-- Struktur dari tabel `recommends`
 --
 
-CREATE TABLE `goods` (
+CREATE TABLE `recommends` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `brand_id` bigint(20) DEFAULT NULL,
-  `name` varchar(191) DEFAULT NULL,
-  `type` varchar(191) DEFAULT NULL,
-  `volume` int(11) DEFAULT NULL,
-  `stock` int(11) DEFAULT NULL,
-  `min_stock` int(11) DEFAULT NULL,
-  `last_purchase_price` int(11) DEFAULT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
+  `goods_id` bigint(20) DEFAULT NULL,
+  `variant` int(11) DEFAULT NULL,
+  `modal` int(11) DEFAULT NULL,
+  `package` int(11) DEFAULT NULL,
+  `hpp` int(11) DEFAULT NULL,
+  `normal_profit` int(11) DEFAULT NULL,
+  `normal_price` int(11) DEFAULT NULL,
+  `market_price` int(11) DEFAULT NULL,
+  `recommend_price` int(11) DEFAULT NULL,
+  `profit` int(11) DEFAULT NULL,
+  `last_price` int(11) DEFAULT NULL,
+  `last_profit` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -46,9 +49,9 @@ CREATE TABLE `goods` (
 --
 
 --
--- Indeks untuk tabel `goods`
+-- Indeks untuk tabel `recommends`
 --
-ALTER TABLE `goods`
+ALTER TABLE `recommends`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -56,9 +59,9 @@ ALTER TABLE `goods`
 --
 
 --
--- AUTO_INCREMENT untuk tabel `goods`
+-- AUTO_INCREMENT untuk tabel `recommends`
 --
-ALTER TABLE `goods`
+ALTER TABLE `recommends`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 COMMIT;
 

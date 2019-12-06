@@ -15,8 +15,11 @@ class Brand extends AutoDate
 
         $this->hasMany(
             'id',
-            'Goods',
-            'brand_id'
+            'StockMan\Goods\Models\Goods',
+            'brand_id',
+            [
+                'alias' => 'Goods',
+            ]
         );
     }
 

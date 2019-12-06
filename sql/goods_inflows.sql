@@ -30,12 +30,12 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `goods_inflows` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `user_id` bigint(20) NULL,
-  `goods_id` varchar(191) NULL,
-  `quantity` int(11) NULL,
-  `cur_stock` int(11) NULL,
+  `user_id` bigint(20) DEFAULT NULL,
+  `goods_id` bigint(20) DEFAULT NULL,
+  `quantity` int(11) DEFAULT NULL,
+  `cur_stock` int(11) DEFAULT NULL,
   `detail` varchar(191) DEFAULT NULL,
-  `purchase_price` double(12,2) NULL,
+  `purchase_price` int(11) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;

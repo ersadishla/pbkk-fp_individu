@@ -15,95 +15,192 @@ $di['router'] = function() use ($defaultModule, $modules, $di, $config) {
 	    'action' => isset($modules[$defaultModule]['defaultAction']) ? $modules[$defaultModule]['defaultAction'] : 'index'
 	]);
 
-	$router->addGet('/brand', [
-	    'namespace' => 'StockMan\Goods\Controllers\Web',
-		'module' => 'goods',
-	    'controller' => 'brand',
+	/**
+	 * Brand Routing
+	 */
+	$brand = new \Phalcon\Mvc\Router\Group(
+		[
+			'namespace' => 'StockMan\Goods\Controllers\Web',
+			'module'     => 'goods',
+			'controller' => 'brand',
+		]
+	);
+
+	$brand->setPrefix('/brand');
+
+	$brand->addGet('', [
+	    'action' => 'index'
+	]);
+	$brand->addPost('', [
+	    'action' => 'store'
+	]);
+	$brand->addGet('/{brand}/edit', [
+	    'action' => 'edit'
+	]);
+	$brand->addPost('/{brand}/update', [
+	    'action' => 'update'
+	]);
+	$brand->addPost('/{brand}/destroy', [
+	    'action' => 'destroy'
+	]);
+	$router->mount($brand);
+
+
+	/**
+	 * Goods Routing
+	 */
+	$goods = new \Phalcon\Mvc\Router\Group(
+		[
+			'namespace' => 'StockMan\Goods\Controllers\Web',
+			'module'     => 'goods',
+			'controller' => 'goods',
+		]
+	);
+
+	$goods->setPrefix('/goods');
+
+	$goods->addGet('', [
+	    'action' => 'index'
+	]);
+	$goods->addPost('', [
+	    'action' => 'store'
+	]);
+	$goods->addGet('/{goods}/edit', [
+	    'action' => 'edit'
+	]);
+	$goods->addPost('/{goods}/update', [
+	    'action' => 'update'
+	]);
+	$goods->addPost('/{goods}/destroy', [
+	    'action' => 'destroy'
+	]);
+	$router->mount($goods);
+
+
+	/**
+	 * GoodsInflow Routing
+	 */
+	$inflow = new \Phalcon\Mvc\Router\Group(
+		[
+			'namespace' => 'StockMan\Goods\Controllers\Web',
+			'module'     => 'goods',
+			'controller' => 'goodsinflow',
+		]
+	);
+
+	$inflow->setPrefix('/inflow');
+
+	$inflow->addGet('', [
+	    'action' => 'index'
+	]);
+	$inflow->addPost('', [
+	    'action' => 'index'
+	]);
+	$inflow->addPost('/store', [
+	    'action' => 'store'
+	]);
+	$router->mount($inflow);
+
+	/**
+	 * GoodsOutflow Routing
+	 */
+	$outflow = new \Phalcon\Mvc\Router\Group(
+		[
+			'namespace' => 'StockMan\Goods\Controllers\Web',
+			'module'     => 'goods',
+			'controller' => 'goodsoutflow',
+		]
+	);
+
+	$outflow->setPrefix('/outflow');
+
+	$outflow->addGet('', [
+	    'action' => 'index'
+	]);
+	$outflow->addPost('', [
+	    'action' => 'index'
+	]);
+	$outflow->addPost('/store', [
+	    'action' => 'store'
+	]);
+	$router->mount($outflow);
+
+
+
+	/**
+	 * Recommedation Routing
+	 */
+	$recom = new \Phalcon\Mvc\Router\Group(
+		[
+			'namespace' => 'StockMan\Goods\Controllers\Web',
+			'module'     => 'goods',
+			'controller' => 'recommend',
+		]
+	);
+
+	$recom->setPrefix('/recommend');
+
+	$recom->addGet('', [
 	    'action' => 'index'
 	]);
 
-	$router->addPost('/brand', [
-	    'namespace' => 'StockMan\Goods\Controllers\Web',
-		'module' => 'goods',
-	    'controller' => 'brand',
-	    'action' => 'store'
-	]);
-
-	$router->addGet('/brand/{brand}/edit', [
-	    'namespace' => 'StockMan\Goods\Controllers\Web',
-		'module' => 'goods',
-	    'controller' => 'brand',
-	    'action' => 'edit'
-	]);
-
-	$router->addPost('/brand/{brand}/update', [
-	    'namespace' => 'StockMan\Goods\Controllers\Web',
-		'module' => 'goods',
-	    'controller' => 'brand',
-	    'action' => 'update'
-	]);
-
-	$router->addPost('/brand/{brand}/destroy', [
-	    'namespace' => 'StockMan\Goods\Controllers\Web',
-		'module' => 'goods',
-	    'controller' => 'brand',
-	    'action' => 'destroy'
-	]);
-
-
-
-
-	$router->addGet('/goods', [
-	    'namespace' => 'StockMan\Goods\Controllers\Web',
-		'module' => 'goods',
-	    'controller' => 'goods',
+	$recom->addPost('', [
 	    'action' => 'index'
 	]);
 
-	$router->addPost('/goods', [
-	    'namespace' => 'StockMan\Goods\Controllers\Web',
-		'module' => 'goods',
-	    'controller' => 'goods',
-	    'action' => 'store'
+	$recom->addPost('/store', [
+		'action' => 'store'
 	]);
 
-	$router->addGet('/goods/{goods}/edit', [
-	    'namespace' => 'StockMan\Goods\Controllers\Web',
-		'module' => 'goods',
-	    'controller' => 'goods',
+	$recom->addGet('/{recommend}/edit', [
 	    'action' => 'edit'
-	]);
+	]);	
 
-	$router->addPost('/goods/{goods}/update', [
-	    'namespace' => 'StockMan\Goods\Controllers\Web',
-		'module' => 'goods',
-	    'controller' => 'goods',
+	$recom->addPost('/{recommend}/update', [
 	    'action' => 'update'
 	]);
 
-	$router->addPost('/goods/{goods}/destroy', [
-	    'namespace' => 'StockMan\Goods\Controllers\Web',
-		'module' => 'goods',
-	    'controller' => 'goods',
+	$recom->addPost('/{recommend}/destroy', [
 	    'action' => 'destroy'
 	]);
 
-	$router->addPost('/inflow/store', [
-	    'namespace' => 'StockMan\Goods\Controllers\Web',
-		'module' => 'goods',
-	    'controller' => 'goodsinflow',
-	    'action' => 'store'
+	$recom->addPost('/{recommend}/refresh', [
+	    'action' => 'refresh'
+	]);
+	$router->mount($recom);
+
+	/**
+	 * Filter Routing
+	 */
+	$filter = new \Phalcon\Mvc\Router\Group(
+		[
+			'namespace' => 'StockMan\Goods\Controllers\Web',
+			'module'     => 'goods',
+			'controller' => 'filter',
+		]
+	);
+
+	$filter->setPrefix('/filter');
+
+	$filter->addGet('/minimal', [
+	    'action' => 'minimal'
 	]);
 
-	$router->addPost('/outflow/store', [
-	    'namespace' => 'StockMan\Goods\Controllers\Web',
-		'module' => 'goods',
-	    'controller' => 'goodsoutflow',
-	    'action' => 'store'
+	$filter->addPost('/minimal', [
+	    'action' => 'minimal'
 	]);
 
+	$filter->addGet('/empty', [
+	    'action' => 'empty'
+	]);
 
-	
+	$filter->addPost('/empty', [
+	    'action' => 'empty'
+	]);
+	$router->mount($filter);
+
+
+
 	/**
 	 * Not Found Routing
 	 */

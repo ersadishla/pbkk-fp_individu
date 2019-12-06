@@ -15,6 +15,7 @@
     <link href="{{ url('css/select2.min.css') }}" rel="stylesheet">
     <link href="{{ url('css/select2-bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ url('css/sweetalert2.min.css') }}" rel="stylesheet">
+    <link href="{{ url('css/bootstrap-datepicker.standalone.min.css') }}" rel="stylesheet">
 
     {% block css%}
     {% endblock %}
@@ -64,7 +65,9 @@
     <script src="{{ url('sb-admin2/vendor/datatables/dataTables.bootstrap4.min.js') }}"></script>
     <script src="{{ url('js/select2.min.js') }}"></script>
     <script src="{{ url('js/sweetalert2.min.js') }}"></script>
+    <script src="{{ url('js/bootstrap-datepicker.min.js') }}"></script>
     <script src="{{ url('js/jquery.number.min.js') }}"></script>
+    <script src="{{ url('js/validator.min.js') }}"></script>
     
     {% block js%}
     {% endblock %}

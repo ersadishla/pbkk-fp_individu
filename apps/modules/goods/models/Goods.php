@@ -21,20 +21,38 @@ class Goods extends AutoDate
 
         $this->belongsTo(
             'brand_id',
-            'Brand',
-            'id'
+            'StockMan\Goods\Models\Brand',
+            'id',
+            [
+                'alias' => 'Brand',
+            ]
         );
 
         $this->hasMany(
             'id',
-            'GoodsInflows',
-            'goods_id'
+            'StockMan\Goods\Models\GoodsInflows',
+            'goods_id',
+            [
+                'alias' => 'GoodsInflows',
+            ]
         );
 
         $this->hasMany(
             'id',
-            'GoodsOutflows',
-            'goods_id'
+            'StockMan\Goods\Models\GoodsOutflows',
+            'goods_id',
+            [
+                'alias' => 'GoodsOutflows',
+            ]
+        );
+
+        $this->hasMany(
+            'id',
+            'StockMan\Goods\Models\Recommend',
+            'goods_id',
+            [
+                'alias' => 'Recommend',
+            ]
         );
     }
 }
