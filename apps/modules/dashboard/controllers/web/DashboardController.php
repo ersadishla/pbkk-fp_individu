@@ -8,7 +8,9 @@ class DashboardController extends Controller
 {
     public function indexAction()
     {
-        $this->view->pick('dashboard/index');
+    	if(!$this->session->has('auth')){
+    		return $this->response->redirect('login');
+        }
+        return $this->response->redirect('goods');
     }
-
 }

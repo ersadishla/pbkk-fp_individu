@@ -22,4 +22,15 @@ return array(
         'defaultController' => 'goods',
         'defaultAction' => 'index'
     ],
+
+    'user' => [
+        'namespace' => 'StockMan\User',
+        'webControllerNamespace' => 'StockMan\User\Controllers\Web',
+        'apiControllerNamespace' => 'StockMan\User\Controllers\Api',
+        'className' => 'StockMan\User\Module',
+        'path' => APP_PATH . '/modules/user/Module.php',
+        'defaultRouting' => true,
+        'defaultController' => 'user',
+        'defaultAction' => 'index'
+    ],
 );

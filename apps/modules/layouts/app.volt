@@ -35,6 +35,7 @@
                 <!-- End of Topbar -->
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
+                    {{ flashSession.output() }}
                     {% block content%}
                     {% endblock %}
                 </div>

@@ -25,7 +25,7 @@
                 <i class="fas fa-cubes"></i>
                 <span>Stok Saya</span></a>
             </li>
-            
+        
             <li class="nav-item">
                 <a class="nav-link" href="{{url('recommend')}}">
                 <i class="fas fa-search-dollar"></i>

@@ -2,14 +2,15 @@
 
 namespace StockMan\Goods\Controllers\Web;
 
-use Phalcon\Mvc\Controller;
+// use Phalcon\Mvc\Controller;
+use StockMan\Goods\Controllers\Web\SecureController;
 use StockMan\Goods\Models\Brand;
 use StockMan\Goods\Models\Goods;
 use StockMan\Goods\Validator\GoodsStoreValidation;
 use StockMan\Goods\Validator\GoodsUpdateValidation;
 use \DataTables\DataTable;
 
-class GoodsController extends Controller
+class GoodsController extends SecureController
 {
     public function indexAction()
     {

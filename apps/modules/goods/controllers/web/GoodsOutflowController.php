@@ -2,7 +2,8 @@
 
 namespace StockMan\Goods\Controllers\Web;
 
-use Phalcon\Mvc\Controller;
+// use Phalcon\Mvc\Controller;
+use StockMan\Goods\Controllers\Web\SecureController;
 use StockMan\Goods\Models\Goods;
 use StockMan\Goods\Models\GoodsOutflow;
 use \DataTables\DataTable;
@@ -10,7 +11,7 @@ use \Carbon\Carbon as Carbon;
 use Phalcon\Validation;
 use Phalcon\Validation\Validator\PresenceOf;
 
-class GoodsOutflowController extends Controller
+class GoodsOutflowController extends SecureController
 {
     public function indexAction()
     {

@@ -2,14 +2,16 @@
 
 namespace StockMan\Goods\Controllers\Web;
 
-use Phalcon\Mvc\Controller;
+// use Phalcon\Mvc\Controller;
+use StockMan\Goods\Controllers\Web\SecureController;
 use StockMan\Goods\Models\Brand;
 use \DataTables\DataTable;
 use Phalcon\Validation;
 use Phalcon\Validation\Validator\PresenceOf;
 
-class BrandController extends Controller
+class BrandController extends SecureController
 {
+
     public function indexAction()
     {
         if ($this->request->isAjax()) {

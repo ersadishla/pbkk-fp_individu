@@ -2,11 +2,12 @@
 
 namespace StockMan\Goods\Controllers\Web;
 
-use Phalcon\Mvc\Controller;
+// use Phalcon\Mvc\Controller;
+use StockMan\Goods\Controllers\Web\SecureController;
 use StockMan\Goods\Models\Goods;
 use \DataTables\DataTable;
 
-class FilterController extends Controller
+class FilterController extends SecureController
 {
     public function minimalAction()
     {

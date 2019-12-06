@@ -26,7 +26,8 @@
         <div class="topbar-divider d-none d-sm-block"></div>
 
         <!-- Nav Item - User Information -->
-        <li class="nav-item dropdown no-arrow">
+        <li class="nav-item">
+            <a href="{{url('logout')}}">Log Out</a>
         </li>
 
     </ul>

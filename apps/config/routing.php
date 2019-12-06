@@ -201,6 +201,43 @@ $di['router'] = function() use ($defaultModule, $modules, $di, $config) {
 
 
 
+	$router->addGet('/login', [
+		'namespace' => 'StockMan\User\Controllers\Web',
+		'module'     => 'user',
+		'controller' => 'user',
+		'action' => 'loginform'
+	]);
+
+	$router->addPost('/login', [
+		'namespace' => 'StockMan\User\Controllers\Web',
+		'module'     => 'user',
+		'controller' => 'user',
+		'action' => 'login'
+	]);
+
+	$router->addGet('/register', [
+		'namespace' => 'StockMan\User\Controllers\Web',
+		'module'     => 'user',
+		'controller' => 'user',
+		'action' => 'registerform'
+	]);
+
+	$router->addPost('/register', [
+		'namespace' => 'StockMan\User\Controllers\Web',
+		'module'     => 'user',
+		'controller' => 'user',
+		'action' => 'register'
+	]);
+
+	$router->addGet('/logout', [
+		'namespace' => 'StockMan\User\Controllers\Web',
+		'module'     => 'user',
+		'controller' => 'user',
+		'action' => 'logout'
+	]);
+
+
+
 	/**
 	 * Not Found Routing
 	 */

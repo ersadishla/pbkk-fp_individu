@@ -17,8 +17,8 @@ require __DIR__ . '/../vendor/autoload.php';
 
 require_once APP_PATH . '/Bootstrap.php';
 
-// $app = new Bootstrap('dashboard');
+$app = new Bootstrap('dashboard');
 
-$app = new Bootstrap('goods');
+// $app = new Bootstrap('user');
 
 $app->init();

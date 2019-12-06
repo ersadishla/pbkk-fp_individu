@@ -5,7 +5,8 @@ use Phalcon\Mvc\View\Engine\Volt;
 
 $di['view'] = function () {
     $view = new View();
-    $view->setViewsDir(__DIR__ . '/../../');
+    $view->setViewsDir(__DIR__ . '/../');
+    // $view->setViewsDir(__DIR__ . '/../views/');
 
     $view->registerEngines(
         [
